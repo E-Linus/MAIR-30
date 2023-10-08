@@ -104,6 +104,7 @@ def print_system_output(choice):
         print(c_report6)
     elif choice == '0':
         print("Exiting...")
+
     else:
         print("Invalid choice. Please try again.")
 
@@ -132,7 +133,7 @@ def main_menu():
         print_system_output(choice)
 
         # User wants to leave
-        if choice == 0:
+        if choice == '0':
             break
 
 if __name__ == "__main__":
