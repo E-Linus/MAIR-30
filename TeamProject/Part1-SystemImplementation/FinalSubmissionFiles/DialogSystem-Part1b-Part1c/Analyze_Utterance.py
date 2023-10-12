@@ -146,7 +146,7 @@ def check_misspelling_or_preferences(cur_utterance, cur_state):
 
 def identify_details(current_state, utterance):
     detail = ''
-    if current_state == 11:
+    if current_state == '11_ProvideRestaurantDetails':
         # Check what detail is requested
         if 'phone' in utterance or 'number' in utterance:
             detail = 'phone'
