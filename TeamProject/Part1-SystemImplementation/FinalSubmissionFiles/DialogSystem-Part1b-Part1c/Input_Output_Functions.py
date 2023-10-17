@@ -26,7 +26,6 @@ def print_system_message(current_state,preferenceField,optionalPreferences, miss
         delay = 0.3 + 0.1*len(utterance)/5
         if delay > 1.5:
             delay = 1.5
-        print("Delay number is ", delay)
         time.sleep(delay)
     out = ""
     match current_state:
