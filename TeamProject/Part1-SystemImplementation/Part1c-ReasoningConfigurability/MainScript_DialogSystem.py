@@ -253,7 +253,7 @@ def main():
                     suggested_restaurants.append(current_restaurant)
 
         detail = identify_details(current_state, utterance)
-        print_system_message(current_state,preferenceField=preferenceField,optionalPreferences=optionalPreferences, restaurant=current_restaurant, detail=detail)
+        print_system_message(current_state,preferenceField=preferenceField,optionalPreferences=optionalPreferences, restaurant=current_restaurant, detail=detail, utterance=utterance)
 
 if __name__ == "__main__":
     main()

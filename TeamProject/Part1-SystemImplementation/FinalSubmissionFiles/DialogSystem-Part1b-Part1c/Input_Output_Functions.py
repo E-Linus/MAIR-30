@@ -13,15 +13,20 @@ ASR_on = configurations['ASR_on']
 caps_on = configurations['caps_on']
 delay_on = configurations['delay_on']
 
+
+
 # Function to handle system outputs
 # @paramters
 # @current_state: int, the current state of the system
 # @misspelling: str, the misspelled word, only needed if @current_state is 2 or 7
 # @restaurant: darray, the restaurant suggested by the system, only needed if @current_state = 9 or 10
 # @detail: string, the requested detail of the restaurant, only needed if @current_state = 10, can be either "phone","addr","postcode"
-def print_system_message(current_state,preferenceField,optionalPreferences, misspelling='', restaurant=None, detail=None):
-    if delay_on:
-        time.sleep(1)
+def print_system_message(current_state,preferenceField,optionalPreferences, misspelling='', restaurant=None, detail=None, utterance=None):
+    if delay_on and utterance != None:
+        delay = 0.3 + len(utterance)/5
+        if delay > 1.5:
+            delay = 1.5
+        time.sleep(delay)
     out = ""
     match current_state:
         case '1_Welcome':
