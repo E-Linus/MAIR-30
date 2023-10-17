@@ -23,7 +23,6 @@ delay_on = configurations['delay_on']
 # @detail: string, the requested detail of the restaurant, only needed if @current_state = 10, can be either "phone","addr","postcode"
 def print_system_message(current_state,preferenceField,optionalPreferences, misspelling='', restaurant=None, detail=None, utterance=None):
     if delay_on and utterance != None:
-        print(len(utterance)/5)
         delay = 0.3 + 0.1*len(utterance)/5
         if delay > 1.5:
             delay = 1.5
