@@ -75,7 +75,7 @@ def state_transition_function(cur_state, cur_dialog_act, cur_utterance):
             preferences_or_misspelling = check_misspelling_or_preferences(cur_utterance, cur_state)
             
             if type(preferences_or_misspelling) == str:
-                print_system_message('7_AskCorrection',caps_on=caps_on,preferenceField=preferenceField,optionalPreferences=optionalPreferences, misspelling=preferences_or_misspelling, utterance = cur_utterance)
+                print_system_message('7_AskCorrection',preferenceField=preferenceField,optionalPreferences=optionalPreferences, misspelling=preferences_or_misspelling, utterance = cur_utterance)
                 return '7_AskCorrection'
 
             update_preferences(preferences_or_misspelling, current_state=cur_state)
