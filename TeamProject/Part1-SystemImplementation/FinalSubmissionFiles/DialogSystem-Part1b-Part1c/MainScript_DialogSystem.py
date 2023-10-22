@@ -51,7 +51,7 @@ random_preference_order_on = configurations['random_preference_order_on']
 # @cur_dialog_act: string, the predicted dialog act for the current utterance
 # @cur_utterance: string, the current utterance provided by the user
 def state_transition_function(cur_state, cur_dialog_act, cur_utterance):
-    
+
     match cur_state:
         case '1_Welcome' | '2_AskCorrection' | '3_AskArea' | '4_AskPriceRange' | '5_AskFoodType':
             if cur_dialog_act != 'inform' and cur_dialog_act != 'reqalts' and cur_dialog_act != 'request':
@@ -166,6 +166,9 @@ def update_preferences(preferences, current_state):
                     return
             elif current_state in ['6_NoRestaurantExists','7_AskCorrection']:
                 if random_preference_order_on:
+                    for key in ['area', 'pricerange', 'food']:
+                        if preferences[key] is None:
+                            preferences[key] = preferenceField[key]
                     preferenceField = {
                         'area': None,
                         'pricerange': None,
