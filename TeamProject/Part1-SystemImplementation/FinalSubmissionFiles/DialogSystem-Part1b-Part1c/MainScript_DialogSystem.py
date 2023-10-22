@@ -234,8 +234,7 @@ def main():
         
         # Used for debugging purposes
         if configurations['debugging_on']:
-            print()
-            # print("For debugging purposes: ", "Predicted Dialog Act: ", predicted_label, " | Utterance: ", utterance, '( Area: ', preferenceField['area'], ' PriceRange: ',preferenceField['pricerange'], ' Food: ',preferenceField['food'], ')')
+            print("For debugging purposes: ", "Predicted Dialog Act: ", predicted_label, " | Utterance: ", utterance, '( Area: ', preferenceField['area'], ' PriceRange: ',preferenceField['pricerange'], ' Food: ',preferenceField['food'], ')')
 
         if current_state == '2_AskCorrection' or current_state == '7_AskCorrection': # This case is handled inside of state_transition_function
             continue
